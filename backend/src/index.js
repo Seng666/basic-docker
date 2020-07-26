@@ -36,9 +36,9 @@ app
   .use(router.allowedMethods());
 
 app.listen(3000)
-
+console.log('server listening at port 3000')
 function postgresMiddleware() {
-  const mongoUrl = 'mongodb://mongoadmin:secret@mongoip:27017'
+  const mongoUrl = 'mongodb://mongoadmin:secret@mongodb:27017'
   const dbName = 'mydb1'
   let client = undefined
   return async (ctx, next) => {
