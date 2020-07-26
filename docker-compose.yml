@@ -1,0 +1,19 @@
+version: '2.2'
+services:
+  mongodb:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    ports:
+      - "27017:27017"
+    restart: always
+  
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/app # so nodemon can detect changes in the container from the source code
+    ports:
+      - "3000:3000"
+    restart: always
