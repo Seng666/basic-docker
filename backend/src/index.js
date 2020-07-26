@@ -38,7 +38,7 @@ app
 app.listen(3000)
 
 function postgresMiddleware() {
-  const mongoUrl = 'mongodb://mongoadmin:secret@localhost:27017'
+  const mongoUrl = 'mongodb://mongoadmin:secret@mongoip:27017'
   const dbName = 'mydb1'
   let client = undefined
   return async (ctx, next) => {
